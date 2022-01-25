@@ -1,44 +1,43 @@
-const crypto = require('crypto');
-const app = require('express')();
-const { PORT = 4000, SALT = '#ha43-1', LOG_LEVEL, NODE_ENV } = process.env;
-const algorithm = 'aes-192-cbc';
-const keylen = 24;
+const express = require("express");
+const app = express();
+const cors = require('cors');
+const { PORT = 8089} = process.env;
+let x = '0';
+const books = {
+  '1':{id:'1',name:'a',author:'a_0',cover:'https://images-na.ssl-images-amazon.com/images/I/51wbVQTpTgL._SX339_BO1,204,203,200_.jpg'},
+  '3':{id:'3',name:'c',author:'a_2',cover:"http://books.google.com/books/content?id=7bT5gO7CrVMC&printsec=frontcover&img=1&zoom=1&source=gbs_api"},
+  '4':{id:'4',name:'d',author:'a_3',cover:"http://books.google.com/books/content?id=TXzaywie004C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"},
+  '5':{id:'5',name:'e',author:'a_4',cover:"http://books.google.com/books/content?id=2UlLLgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"},
+  '6':{id:'6',name:'f',author:'a_5',cover:"http://books.google.com/books/content?id=yBYmAAAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"},
+  '7':{id:'7',name:'g',author:'a_6',cover:"http://books.google.com/books/content?id=LUVOPwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"},
+  '8':{id:'8',name:'h',author:'a_7',cover:"https://images-na.ssl-images-amazon.com/images/I/91dDv9WOcFL.jpg"},
+  '9':{id:'9',name:'i',author:'a_8',cover:"https://5.imimg.com/data5/FL/IL/MY-49937457/selection_198-500x500.png"},
+}
+// const connectDb = require("./src/connection");
+// const User = require("./src/User.model");
 
-const encrypt = ({ message, secret }) => {
-  const key = crypto.scryptSync(secret, SALT, keylen);
-  const iv = Buffer.alloc(16, 0);
-  const cipher = crypto.createCipheriv(algorithm, key, iv);
+// app.get("/users", async (req, res) => {
+//     const users = await User.find();
+//     console.log("users : " ,users);
+//     res.json(users);
+//   });
+//   app.get("/user-create", async (req, res) => {
+//     const user = new User({ bookid: x, author:'xyz' + x, image:'image' + x});
+//     x += 1; 
+//     await user.save().then(() => console.log("User created"));
+  
+//     res.send("User created \n");
+//   });
 
-  let encrypted = cipher.update(message, 'utf8', 'hex');
-  encrypted += cipher.final('hex');
+  app.use(cors());
 
-  return encrypted;
-};
-
-const decrypt = ({ message, secret }) => {
-  const key = crypto.scryptSync(secret, SALT, keylen);
-  const iv = Buffer.alloc(16, 0);
-  const decipher = crypto.createDecipheriv(algorithm, key, iv);
-
-  let decrypted = decipher.update(message, 'hex', 'utf8');
-  decrypted += decipher.final('utf8');
-
-  return decrypted;
-};
-
-app.use(({ query: { message, secret }, path }, res, next) => {
-  console.log(`${path}: ${message}`);
-  next();
-})
-
-app.get('/encrypt', ({ query }, res) => {
-  res.send(encrypt(query));
-});
-
-app.get('/decrypt', ({ query }, res) => {
-  res.send(decrypt(query));
-});
-
-app.listen(PORT, () => {
-  console.log(`Listening on ${PORT}, LOG_LEVEL: ${LOG_LEVEL}, NODE_ENV: ${NODE_ENV}`);
-});
+  app.get('/books', (req,res) =>{
+    console.log("request received :",x);
+    x+=1;
+    res.send(books);
+  })
+  
+  app.listen(PORT, function() {
+    console.log(`Listening on ${PORT}`);
+  });
+  

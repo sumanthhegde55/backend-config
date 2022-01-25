@@ -14,6 +14,6 @@ RUN npm i -g pm2
 # Add application files
 ADD app /var/www/app
 
-EXPOSE 4000
+EXPOSE 8089
 
 CMD ["pm2", "start", "process.json", "--no-daemon"]
