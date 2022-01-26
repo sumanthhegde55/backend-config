@@ -36,7 +36,9 @@ const books = {
     x+=1;
     res.send(books);
   })
-  
+  app.get('/',(req,res) =>{
+    res.json('backend running');
+  })
   app.listen(PORT, function() {
     console.log(`Listening on ${PORT}`);
   });
