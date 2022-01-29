@@ -4,7 +4,7 @@ const cors = require('cors');
 const { PORT = 8089} = process.env;
 let x = '0';
 const books = {
-  '1':{id:'1',name:'Harry Potter And The Philosopher\'s Stone',author:'JK Rowling',cover:'https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg'},
+  '1':{id:'1',name:'Harry Potter And The Deathly Hallows',author:'JK Rowling',cover:'https://media.harrypotterfanzone.com/deathly-hallows-us-childrens-edition.jpg'},
   '3':{id:'3',name:'Sherlock Holmes',author:'A.C Doyle',cover:"http://books.google.com/books/content?id=7bT5gO7CrVMC&printsec=frontcover&img=1&zoom=1&source=gbs_api"},
   '4':{id:'4',name:'Merchant of Venice',author:'W. Shakespeare',cover:"https://images-na.ssl-images-amazon.com/images/I/71ot2ctZ3mL.jpg"},
   '5':{id:'5',name:'The Lord Of The Rings',author:'JRR Tolkien',cover:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566425108l/33.jpg"},
