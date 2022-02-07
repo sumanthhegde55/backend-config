@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const { PORT = 8089} = process.env;
 const books = {
-  '1':{id:'1',name:'Harry Potter And The Deathly Hallows',author:'JK Rowling',cover:'https://static.wikia.nocookie.net/harrypotter/images/5/59/DeathlyHallowsCover.jpg/revision/latest/scale-to-width-down/250?cb=20150208231351'},
+  '1':{id:'1',name:'Harry Potter Book 7',author:'JK Rowling',cover:'https://hips.hearstapps.com/digitalspyuk.cdnds.net/15/50/1449878132-9781781100264.jpg'},
   '2':{id:'2',name:'Sherlock Holmes',author:'A.C Doyle',cover:"https://images-na.ssl-images-amazon.com/images/I/91dDv9WOcFL.jpg"},
   '3':{id:'3',name:'Merchant of Venice',author:'W. Shakespeare',cover:"https://images-na.ssl-images-amazon.com/images/I/71ot2ctZ3mL.jpg"},
   '4':{id:'4',name:'The Lord Of The Rings',author:'JRR Tolkien',cover:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566425108l/33.jpg"},
