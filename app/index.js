@@ -3,8 +3,8 @@ const app = express();
 const cors = require('cors');
 const { PORT = 8089} = process.env;
 const books = {
-  '1':{id:'1',name:'Harry Potter Book 7',author:'JK Rowling',cover:'https://hips.hearstapps.com/digitalspyuk.cdnds.net/15/50/1449878132-9781781100264.jpg'},
-  '2':{id:'2',name:'Sherlock Holmes',author:'A.C Doyle',cover:"https://images-na.ssl-images-amazon.com/images/I/91dDv9WOcFL.jpg"},
+  '1':{id:'1',name:'Harry Potter Book 7',author:'JK Rowling',cover:'https://media.harrypotterfanzone.com/deathly-hallows-us-childrens-edition.jpg'},
+  '2':{id:'2',name:'Sherlock Holmes',author:'Arthur Doyle',cover:"https://www.publicbookshelf.com/images/sherlock-holmes423x630.jpg"},
   '3':{id:'3',name:'Merchant of Venice',author:'W. Shakespeare',cover:"https://images-na.ssl-images-amazon.com/images/I/71ot2ctZ3mL.jpg"},
   '4':{id:'4',name:'The Lord Of The Rings',author:'JRR Tolkien',cover:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566425108l/33.jpg"},
   '5':{id:'5',name:'The Da Vinci Code',author:'Dan Brown',cover:"https://images-eu.ssl-images-amazon.com/images/I/5171w-4D2FL._SX342_SY445_QL70_ML2_.jpg"},
@@ -13,7 +13,7 @@ const books = {
   '8':{id:'8',name:'Hunger Games',author:'Suzainne Collins',cover:"https://images-na.ssl-images-amazon.com/images/I/61nZqhftUPL.jpg"},
 }
 
-// 1 : https://static.wikia.nocookie.net/harrypotter/images/5/59/DeathlyHallowsCover.jpg/revision/latest/scale-to-width-down/250?cb=20150208231351
+// 1 : https://hips.hearstapps.com/digitalspyuk.cdnds.net/15/50/1449878132-9781781100264.jpg
 // 1 : https://media.harrypotterfanzone.com/deathly-hallows-us-childrens-edition.jpg
 // 2 : https://www.publicbookshelf.com/images/sherlock-holmes423x630.jpg 
 // 2 : https://images-na.ssl-images-amazon.com/images/I/91dDv9WOcFL.jpg
